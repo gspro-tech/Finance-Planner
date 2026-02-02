@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinVue Elite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #030712; /* Gray 950 */
+      color: #f9fafb;
+      overflow-x: hidden;
+    }
+    .bg-mesh {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at 0% 0%, #1e1b4b 0%, transparent 50%),
+                  radial-gradient(circle at 100% 100%, #312e81 0%, transparent 50%),
+                  radial-gradient(circle at 50% 50%, #030712 0%, transparent 100%);
+    }
+    .glass-effect {
+      background: rgba(17, 24, 39, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    }
+    .premium-gradient-border {
+      position: relative;
+    }
+    .premium-gradient-border::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(to bottom right, rgba(255,255,255,0.2), transparent, rgba(255,255,255,0.1));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .glow-button-ai {
+      background: linear-gradient(90deg, #4f46e5, #9333ea, #4f46e5);
+      background-size: 200% auto;
+      transition: 0.5s;
+    }
+    .glow-button-ai:hover {
+      background-position: right center;
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #030712; }
+    ::-webkit-scrollbar-thumb { background: #374151; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.475.0",
+    "recharts": "https://esm.sh/recharts@^2.12.7",
+    "jspdf": "https://esm.sh/jspdf@^2.5.1"
+  }
+}
+</script>
+</head>
+<body>
+  <div class="bg-mesh"></div>
+  <div id="root"></div>
+</body>
+</html>
